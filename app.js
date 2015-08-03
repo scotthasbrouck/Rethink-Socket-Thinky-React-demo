@@ -62,37 +62,12 @@ io.on('connection', socket => {
 		});
 	});
 
+	// get on initial socket load
 	Thing.run().then((things) => {
 		things.forEach((thing) => {
 			socket.emit('thing', thing);
 		});
 	});
-
-
-
-
-
-/*
-	// get the things already in the database
-	r.table('things').run(connection, (err, cursor) => {
-		if (err) throw err;
-		cursor.each((err, row) => {
-			socket.emit('thing', row);
-		});
-	});
-
-	// subscribe to rethink query for things, and emit them
-	r.table('things').changes().run(connection, (err, feed) => {
-		if (err) throw err;
-		feed.each((err, row) => {
-			if (err) throw err;
-			// row still present and was just chagned
-			if (row.new_val) { socket.emit('thing', row.new_val); }
-			// row deleted
-			else {  socket.emit('thing', { id: row.old_val.id })}
-		});
-	});
-	*/
 });
 
 server.listen(3000, () => {
