@@ -18,8 +18,10 @@
                 return false;
             });
             socket.on('thing', function(thing) {
-                if (thing.name) { $('#things').append($('<li>').text(thing.name).attr("id", thing.id)); }
-                else { $('#' + thing.id).remove(); }
+                if (thing.deleted) { $('#' + thing.id).remove(); }
+                else if (thing.updated) { $('#' + thing.id).text(thing.name); }
+                else if (thing.new) { $('#things').append($('<li>').text(thing.name).attr("id", thing.id)); }
+                else { $('#things').append($('<li>').text(thing.name).attr("id", thing.id)); }
             });
         </script>
     </body>
