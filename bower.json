@@ -1,0 +1,25 @@
+{
+  "name": "ninethings",
+  "main": [
+      "index.js",
+      "index.html"
+  ],
+  "version": "0.0.1",
+  "authors": [
+    "Scott Hasbrouck <hello@scotthasbrouck.com>"
+  ],
+  "description": "A test of Node, Socketio, Rethinkdb, Passport, Express, Reflux, and React",
+  "moduleType": [
+    "amd",
+    "es6",
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

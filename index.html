@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+
+    </head>
+    <body>
+        <form id="thing-form">
+            <input id="thing"></input>
+        </form>
+        <ul id="things">
+        </ul>
+        <script>
+            var socket = io();
+            $('form').submit(function(){
+                socket.emit('thing', $('#thing').val());
+                $('#thing').val('');
+                return false;
+            });
+            socket.on('thing', function(thing) {
+                if (thing.name) { $('#things').append($('<li>').text(thing.name).attr("id", thing.id)); }
+                else { $('#' + thing.id).remove(); }
+            });
+        </script>
+    </body>
+</html>

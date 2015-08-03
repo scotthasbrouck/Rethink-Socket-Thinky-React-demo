@@ -1,0 +1,14 @@
+{
+  "name": "ninethings",
+  "version": "0.0.1",
+  "description": "A test of Node, Socketio, Rethinkdb, Passport, Express, Reflux, and React",
+  "author": "Scott Hasbrouck <hello@scotthasbrouck.com",
+  "main": "index.js",
+  "dependencies": {
+    "babel": "^5.8.20",
+    "express": "^4.13.2",
+    "rethinkdb": "^2.0.2",
+    "socket.io": "^1.3.6",
+    "thinky": "^2.0.10"
+  }
+}
